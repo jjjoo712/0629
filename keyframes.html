@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키프레임_연출</title>
+</head>
+<style>
+    div{
+        background-color: black;
+        /* border-radius: 50%; */
+        height:0;
+        width:0;
+        position: absolute;
+        margin:auto;
+        left:0;right:0;top:0;bottom:0;
+        /*그라디언트 background-image */
+        /* 다른 수치스타일들은 물리적으로 계산
+        단,시각적으로는 쇼하는 것이 바로 transform: ; */
+        transform:scale(1);
+        animation-name:circleAni;
+        animation-duration: 1s;/*비록 0이더라도 단위절대 생략불가*/
+        animation-fill-mode: forwards; 
+        animation-delay: 1s;
+        /*애니가 끝나고나서 마지막키프레임으로 고정화하기*/
+        /* animation-iteration-count: infinite; */
+        /*애니메이션 끊임없이 지속*/
+    }
+    @keyframes circleAni{
+        0%{
+                width:0; height:0;    
+            
+        }
+        100%{
+        
+            
+            width:100%; height:100%;
+        }
+        
+    }
+</style>
+<body>
+    <!-- 마우스 이벤트/ 마우스 피드백에 대응하지 않아 -->
+    <!-- 노란색 정원이 화면가운데 있다..abs 포지션으로 /너비높이 모두 15rem으로처리 -->
+
+    <div>
+
+    </div>
+</body>
+</html>

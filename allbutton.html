@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>햄버거버튼 만들기</title>
+    <style>
+        #allBtn{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /*flex는 부모에게 주고 플렉스방향은 컬럼별로, 비트윈 줌*/
+            width:10rem;
+            height:10rem;
+            
+            /* border:1px solid #222; */
+            padding:1rem;
+            box-sizing: border-box;
+            /*위드값을 지키면서 안쪽으로 들어온다*/
+
+        }
+        #allBtn:before, #allBtn:after{
+            content:"";
+            display: block;
+            height:.5rem;
+            background-color: #222;
+            
+
+        }
+        #allBtn span{
+           
+            display: block;
+            height:.5rem;
+            background-color: #222;
+            transition:0.5s;
+            /*트랜지션은 오토에게 안먹힘. 수치가 있는 것들만 가능*/
+            width:100%;
+        }
+        #allBtn:focus span{
+            width:0;
+            transform:translate(-30px,0)
+        }
+        #allBtn:focus:before{
+            transform-origin: center;
+            /*오리지널이 중심축을 잡아준다..ㅠ*/
+            transform:rotate(-45deg) translate(-31px,100px);
+            /*translate 앞에는 x축 뒤에가 y축*/
+
+        }
+        #allBtn:focus:after{
+            transform:rotate(45deg) translate(20px,-50px);
+
+        }
+    </style>
+</head>
+<body>
+    <a href="#none" id="allBtn">
+        <!-- before -->
+        <span></span>
+        <!-- after -->
+    </a>
+</body>
+</html>
